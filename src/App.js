@@ -7,7 +7,14 @@ import Todo from "./components/Todo";
  * @returns {JSX.Element}
  */
 function App(props) {
-  const taskList = props.tasks.map((task) => <Todo id={task.id} name={task.name} completed={task.completed} />);
+  const taskList = props.tasks.map((task) => (
+    <Todo
+      id={task.id}
+      key={task.id}
+      name={task.name}
+      completed={task.completed}
+    />
+  ));
 
   return (
     <div className="todoapp stack-large">
@@ -18,7 +25,13 @@ function App(props) {
             What needs to be done?
           </label>
         </h2>
-        <input type="text" id="new-todo-input" className="input input__lg" name="text" autoComplete="off" />
+        <input
+          type="text"
+          id="new-todo-input"
+          className="input input__lg"
+          name="text"
+          autoComplete="off"
+        />
         <button type="submit" className="btn btn__primary btn__lg">
           Add
         </button>
@@ -41,7 +54,11 @@ function App(props) {
         </button>
       </div>
       <h2 id="list-heading">3 tasks remaining</h2>
-      <ul role="list" className="todo-list stack-large stack-exception" aria-labelledby="list-heading">
+      <ul
+        role="list"
+        className="todo-list stack-large stack-exception"
+        aria-labelledby="list-heading"
+      >
         {taskList}
       </ul>
     </div>
