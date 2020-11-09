@@ -1,8 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  const subject = 'React';
+/**
+ * Main App component
+ *
+ * @param {React.Props<any>} props
+ * @returns {JSX.Element}
+ */
+function App(props) {
+  const subject = props.subject;
   return (
     <div className="App">
       <header className="App-header">
